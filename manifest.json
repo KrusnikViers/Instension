@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Instension",
+  "version": "0.0.0",
+  "background": {
+    "scripts": [
+      "scripts/instension.js"
+    ]
+  },
+  "permissions": [
+    "contextMenus"
+  ]
+}
