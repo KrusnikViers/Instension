@@ -3,11 +3,13 @@
   "name": "Instension",
   "version": "0.0.0",
   "background": {
-    "scripts": [
-      "scripts/instension.js"
-    ]
+    "scripts": ["scripts/background.js"]
   },
-  "permissions": [
-    "contextMenus"
-  ]
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["scripts/element_finder.js", "scripts/content.js"]
+    }
+  ],
+  "permissions": ["contextMenus", "downloads"]
 }
