@@ -1,3 +1,5 @@
+// Retrieve content link (direct link to the video, or direct link to the
+// biggest image available) from the nodes tree.
 function getNodeContent(node) {
   switch (node.nodeName) {
     case 'IMG':
@@ -19,6 +21,8 @@ function getNodeContent(node) {
   }
 }
 
+// Finds top element of the post. For paged post this is <li> tag of the
+// corresponding page; for post with single photo or video - <article>.
 function getTopParentElement(node) {
   let parentNode = node;
   while (parentNode.parentNode) {
@@ -36,11 +40,10 @@ function getTopParentElement(node) {
   }
 }
 
+// Create a structure, that describes instagram post contents.
 function getCurrentPostElements(clickedElement) {
   // Right now structure of Instagram post in web is this one:
   // article => *div => [ul => li => ] => *div
-
-  // Rising to the first |li| or |article| - whatever hit first.
   let parentNode = getTopParentElement(clickedElement);
 
   // If |li| was met, than we are in a multislide post.
@@ -61,7 +64,8 @@ function getCurrentPostElements(clickedElement) {
   }
 
   return {
-    'isMultislide': isMultislide, 'currentContent': currentContent,
-        'allContents': allContents
+    'isMultislide': isMultislide,
+    'currentContent': currentContent,
+    'allContents': allContents
   }
 }
