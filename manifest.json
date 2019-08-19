@@ -2,14 +2,33 @@
   "manifest_version": 2,
   "name": "Instension",
   "version": "0.0.0",
-  "background": {
-    "scripts": ["scripts/background.js"]
+  "icons": {
+    "16":  "icons/logo_16.png",
+    "32":  "icons/logo_32.png",
+    "64":  "icons/logo_64.png",
+    "128": "icons/logo_128.png"
   },
+
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ]
+  },
+
   "content_scripts": [
     {
-      "matches": ["*://*.instagram.com/*"],
-      "js": ["scripts/element_finder.js", "scripts/content.js"]
+      "matches": [
+        "*://*.instagram.com/*"
+      ],
+      "js": [
+        "scripts/element_finder.js",
+        "scripts/content.js"
+      ]
     }
   ],
-  "permissions": ["contextMenus", "downloads"]
+
+  "permissions": [
+    "contextMenus",
+    "downloads"
+  ]
 }
