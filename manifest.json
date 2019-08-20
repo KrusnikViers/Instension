@@ -3,13 +3,12 @@
   "name": "Instension",
   "version": "1.0.0",
 
-  "description": "Extension to enhance available features of Instagram website",
+  "description": "Browser extension, that allows you to open in new tab or download video/photo posts from Instagram website.",
   "icons": {
     "16":  "icons/instension_16.png",
     "32":  "icons/instension_32.png",
     "64":  "icons/instension_64.png",
-    "128": "icons/instension_128.png",
-    "512": "icons/instension_512.png"
+    "128": "icons/instension_128.png"
   },
 
   "background": {

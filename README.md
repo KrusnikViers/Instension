@@ -1,6 +1,6 @@
 # Instension
 
-Browser extension, allowing to open in new tab or download video/photo posts from Instagram website.
+Browser extension, that allows you to open in new tab or download video/photo posts from Instagram website.
 
 ---
 
