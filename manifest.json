@@ -23,6 +23,7 @@
       "matches": [
         "*://*.instagram.com/*"
       ],
+      "run_at": "document_start",
       "js": [
         "scripts/element_finder.js",
         "scripts/content.js"

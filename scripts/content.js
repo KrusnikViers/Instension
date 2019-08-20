@@ -1,7 +1,7 @@
 // Record last page element, for which context menu was called.
 var lastContextedElement = null;
 
-document.addEventListener('contextmenu', function(event) {
+window.addEventListener('contextmenu', function(event) {
   lastContextedElement = event.target;
 }, true);
 
