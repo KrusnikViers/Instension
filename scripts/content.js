@@ -8,33 +8,20 @@ window.addEventListener('contextmenu', function(event) {
 // This handler listens to the commands from context menu, and sends
 // corresponding action commands back to the background script.
 chrome.extension.onMessage.addListener(function(message, _, sendResponse) {
-  let content = null;
   if (lastContextedElement)
-    content = getCurrentPostElements(lastContextedElement);
-
+    content = getPostContent(lastContextedElement);
   if (content) {
     switch (message.actionType) {
       case 'content_open':
-        chrome.runtime.sendMessage({
-          'actionType': 'background_open',
-          'contentUrl': content.currentContent
-        });
+        chrome.runtime.sendMessage(
+            {'actionType': 'background_open', 'contentUrl': content});
         break;
 
       case 'content_download':
-        chrome.runtime.sendMessage({
-          'actionType': 'background_download',
-          'contentUrls': [content.currentContent]
-        });
-        break;
-
-      case 'content_download_all':
-        chrome.runtime.sendMessage({
-          'actionType': 'background_download',
-          'contentUrls': content.allContents
-        });
+        chrome.runtime.sendMessage(
+            {'actionType': 'background_download', 'contentUrl': content});
         break;
     }
+    sendResponse();
   }
-  sendResponse();
 });
