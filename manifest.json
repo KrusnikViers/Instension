@@ -5,10 +5,11 @@
 
   "description": "Extension to enhance available features of Instagram website",
   "icons": {
-    "16":  "icons/logo_16.png",
-    "32":  "icons/logo_32.png",
-    "64":  "icons/logo_64.png",
-    "128": "icons/logo_128.png"
+    "16":  "icons/instension_16.png",
+    "32":  "icons/instension_32.png",
+    "64":  "icons/instension_64.png",
+    "128": "icons/instension_128.png",
+    "512": "icons/instension_512.png"
   },
 
   "background": {

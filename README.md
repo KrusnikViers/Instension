@@ -1,6 +1,7 @@
 # Instension
-Browser extension to enhance available features of Instagram website
+
+Browser extension, allowing to open in new tab or download video/photo posts from Instagram website.
 
 ---
 
-Icons made by [Freepik](https://www.freepik.com/home) from [flaticon](www.flaticon.com)
+Original extension icon was made by [Google on FlatIcon](https://www.flaticon.com/authors/google) under [CC 3.0](https://creativecommons.org/licenses/by/3.0/legalcode), and modified for this project.
