@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Instension",
-  "version": "1.0.0",
+  "version": "1.1.0",
 
-  "description": "Browser extension, that allows you to open in new tab or download video/photo posts from Instagram website.",
+  "description": "Chrome browser extension, that allows to download or open in a separate tab a video/photo post from the Instagram website.",
   "icons": {
     "16":  "icons/instension_16.png",
     "32":  "icons/instension_32.png",

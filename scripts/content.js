@@ -1,27 +1,14 @@
-// Record last page element, for which context menu was called.
-var lastContextedElement = null;
+// Channel for the message exchange between background and content scripts.
+var port = chrome.runtime.connect({name: 'base_port'});
 
-window.addEventListener('contextmenu', function(event) {
-  lastContextedElement = event.target;
+// Listener to the right click menu event, that tries to find an Instagram
+// content (image or video) on the clicked element, and enables context menu
+// items if the content was found.
+document.addEventListener('mousedown', function(event) {
+  if (event.button != 2) return false;
+  let instagramContent = getPostContent(event.target);
+  port.postMessage({
+    'event': 'content_update',
+    'url': instagramContent
+  });
 }, true);
-
-// This handler listens to the commands from context menu, and sends
-// corresponding action commands back to the background script.
-chrome.extension.onMessage.addListener(function(message, _, sendResponse) {
-  if (lastContextedElement)
-    content = getPostContent(lastContextedElement);
-  if (content) {
-    switch (message.actionType) {
-      case 'content_open':
-        chrome.runtime.sendMessage(
-            {'actionType': 'background_open', 'contentUrl': content});
-        break;
-
-      case 'content_download':
-        chrome.runtime.sendMessage(
-            {'actionType': 'background_download', 'contentUrl': content});
-        break;
-    }
-    sendResponse();
-  }
-});
